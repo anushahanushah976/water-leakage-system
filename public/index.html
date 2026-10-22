@@ -1,0 +1,149 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title> AquaWatch | Water Leakage Reporting</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="navbar">
+    <a class="brand" href="#">💧 AquaWatch</a>
+    <nav>
+      <a href="#home">Home</a>
+      <a href="#report">Report Leak</a>
+      <a href="#tracking">Track Reports</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="hero-content">
+        <span class="tag">SAVE WATER • SAVE LIFE</span>
+        <h1>Every Drop Matters.<br><span>Report Every Leak.</span></h1>
+        <p>
+          Help your community conserve water. Report leaking pipes,
+          overflowing tanks and damaged water connections.
+        </p>
+        <a class="primary-btn" href="#report">Report a Leakage →</a>
+      </div>
+      <div class="hero-icon" aria-hidden="true">💧</div>
+    </section>
+
+    <section class="stats">
+      <div class="stat-card">
+        <span>📋</span>
+        <p>Total Reports</p>
+        <h2 id="total">0</h2>
+      </div>
+      <div class="stat-card">
+        <span>⏳</span>
+        <p>Pending</p>
+        <h2 id="pending">0</h2>
+      </div>
+      <div class="stat-card">
+        <span>🛠️</span>
+        <p>In Progress</p>
+        <h2 id="progress">0</h2>
+      </div>
+      <div class="stat-card">
+        <span>✅</span>
+        <p>Resolved</p>
+        <h2 id="resolved">0</h2>
+      </div>
+    </section>
+
+    <section class="section" id="report">
+      <div class="section-heading">
+        <span class="tag">TAKE ACTION</span>
+        <h2>Report Water Leakage</h2>
+        <p>Fill in the details below to register a complaint.</p>
+      </div>
+
+      <form id="reportForm" class="report-form">
+        <div class="form-grid">
+          <label>
+            Your Name *
+            <input name="reporterName" required maxlength="100"
+              placeholder="Enter your name">
+          </label>
+
+          <label>
+            Leakage Location *
+            <input name="location" required maxlength="250"
+              placeholder="Street, area or landmark">
+          </label>
+
+          <label>
+            Type of Leakage *
+            <select name="leakType" required>
+              <option value="">Select leak type</option>
+              <option>Broken Pipeline</option>
+              <option>Roadside Leakage</option>
+              <option>Overflowing Tank</option>
+              <option>Damaged Public Tap</option>
+              <option>Building Leakage</option>
+              <option>Other</option>
+            </select>
+          </label>
+
+          <label>
+            Priority
+            <select name="priority">
+              <option>Low</option>
+              <option selected>Medium</option>
+              <option>High</option>
+            </select>
+          </label>
+
+          <label class="full">
+            Photo URL (optional)
+            <input name="photoUrl" type="url" maxlength="1000"
+              placeholder="https://example.com/leak-photo.jpg">
+          </label>
+
+          <label class="full">
+            Description *
+            <textarea name="description" required maxlength="2000"
+              rows="4" placeholder="Describe the leakage and nearby landmarks"></textarea>
+          </label>
+        </div>
+        <button class="primary-btn" type="submit">Submit Report</button>
+        <p id="formMessage" role="status"></p>
+      </form>
+    </section>
+
+    <section class="section tracking" id="tracking">
+      <div class="section-heading">
+        <span class="tag">LIVE TRACKING</span>
+        <h2>Leakage Reports</h2>
+        <p>View registered complaints and their latest status.</p>
+      </div>
+
+      <div class="toolbar">
+        <input id="search" type="search"
+          placeholder="Search by location or report ID...">
+        <select id="statusFilter" aria-label="Filter by status">
+          <option value="All">All statuses</option>
+          <option value="Pending">Pending</option>
+          <option value="In Progress">In Progress</option>
+          <option value="Resolved">Resolved</option>
+        </select>
+      </div>
+
+      <div id="reportsList" class="reports-grid">
+        <p>Loading reports...</p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <h3>💧 AquaWatch</h3>
+    <p>Working together for a water-secure future.</p>
+    <small>Water Leakage Reporting and Tracking System</small>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
